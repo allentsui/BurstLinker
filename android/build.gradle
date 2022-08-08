@@ -35,6 +35,6 @@ task clean(type: Delete) {
 }
 
 ext {
-    burstLinkerVer = '0.0.14'
-    libs = ['burstLinkerVer': "com.bilibili:$burstLinkerVer"]
+    burstLinkerVer = '0.0.15'
+    libs = ['burstLinkerVer': "com.github.allentsui:BurstLinker:$burstLinkerVer"]
 }

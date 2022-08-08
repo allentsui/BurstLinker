@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 //apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'maven-publish'
 
 ext {
     VERSION_NAME = rootProject.ext.burstLinkerVer
@@ -50,4 +51,15 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
-apply from: rootProject.file('upload.gradle')
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.allentsui' //groupId
+                artifactId = 'BurstLinker'  //artifactId
+                version = VERSION_NAME
+            }
+        }
+    }
+}
