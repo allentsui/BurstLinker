@@ -2,18 +2,19 @@ import com.android.build.gradle.BaseExtension
 
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.4.1'
-        classpath 'com.novoda:bintray-release:0.9.1'
+        classpath 'com.android.tools.build:gradle:7.0.4'
+//        classpath 'com.novoda:bintray-release:0.9.1'
     }
 }
 
 allprojects {
     repositories {
-        jcenter()
+//        mavenLocal()
+        mavenCentral()
         google()
     }
     afterEvaluate {
@@ -34,6 +35,6 @@ task clean(type: Delete) {
 }
 
 ext {
-    burstLinkerVer = '0.0.12'
+    burstLinkerVer = '0.0.14'
     libs = ['burstLinkerVer': "com.bilibili:$burstLinkerVer"]
 }
